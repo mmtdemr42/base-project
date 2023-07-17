@@ -12,7 +12,7 @@ import Modal from "@/components/modal";
     isPageLoading: boolean;
     setIsPageLoading: Dispatch<SetStateAction<boolean>>;
     deneme: string;
-    handleBaseModal: (header: string, children:null) => void;
+    handleBaseModal: (header: string, children:React.JSX.Element) => void;
     handleClose: () => void;
   }
   
@@ -21,7 +21,7 @@ import Modal from "@/components/modal";
     const [deneme, setDeneme] = useState("Context");
     const [open, setOpen] = useState(false);
     const [modalHeader, setModalHeader] = useState("");
-    const [modalChildren, setModalChildren] =  useState<ReactNode>(null);
+    const [modalChildren, setModalChildren] =  useState<React.JSX.Element>(<></>);
 
 
   
@@ -30,7 +30,7 @@ import Modal from "@/components/modal";
     setOpen(false);
   };
 
-  const handleBaseModal = (header: string, children:ReactNode  ) => {
+  const handleBaseModal = (header: string, children:React.JSX.Element  ) => {
       setOpen(true);
       setModalHeader(header);
       setModalChildren(children);
